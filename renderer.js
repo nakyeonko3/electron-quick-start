@@ -5,3 +5,19 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
+const audio = new Audio('lum.mp3');
+const video = document.querySelector('video');
+audio.volume = 0.1;
+audio.loop = true;
+let flag = true;
+
+video.addEventListener('click', () => {
+  if (flag === true) {
+    audio.play();
+    flag = false;
+  } else {
+    audio.pause();
+    flag = true;
+  }
+});
+console.log(audio);
