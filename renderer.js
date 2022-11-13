@@ -7,7 +7,7 @@
  */
 const audio = new Audio('lum.mp3');
 const video = document.querySelector('video');
-audio.volume = 0.1;
+audio.volume = 0.4;
 audio.loop = true;
 let flag = true;
 
@@ -20,4 +20,15 @@ video.addEventListener('click', () => {
     flag = true;
   }
 });
-console.log(audio);
+
+setInterval(
+  () => {
+    if (video.currentTime > 100) {
+      console.log('loop start');
+      video.currentTime = 10;
+    }
+  },
+  1000,
+  'Parameter 1',
+  'Parameter 2'
+);
